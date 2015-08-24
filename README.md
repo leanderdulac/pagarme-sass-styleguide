@@ -94,7 +94,7 @@ $DASHBOARD_GRAY_BLACK: #484848;
 
 ## Nesting
 
-Nesting is a powerful tool for organizing your code, but let's make some rules clear so it will not be misuded.
+Nesting is a powerful tool for organizing your code, but let's make some rules clear so it will not be misused.
 
 * Always use `&` for referencing the current selector
 * Always nest pseudo-classes such as `::after` and `::before`
