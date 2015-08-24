@@ -43,15 +43,16 @@ The awesome angular.js styleguide that we follow at Pagar.me
 
 * Should be written in [kebab-case](http://c2.com/cgi/wiki?KebabCase)
 * Should have one space after `:` and no space between value and `;`
-* Should have meaningful names
+* Should have meaningful names so confusion can be avoided
 * nested variables should have one `_` per nesting level so you have a clear idea about the scope of the variable
  
-```
-$root-color: #FF3212;
+```css
+//Awesome
+$root-dashboard-red: #FF3212;
 .first-level{
-  $_first-level-red: #FF1208;
+  $_first-level-dashboard-red: #FF1208;
   .second-level{
-    $__second-level-red: #FF2141;
+    $__second-level-dashboard-red: #FF2141;
   }
 }
 ```
