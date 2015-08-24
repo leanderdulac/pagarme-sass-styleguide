@@ -65,8 +65,10 @@ The awesome angular.js styleguide that we follow at Pagar.me
 ```scss
 //Awesome
 $root-dashboard-red: #FF3212;
+
 .first-level{
   $_first-level-dashboard-red: #FF1208;
+  
   .second-level{
     $__second-level-dashboard-red: #FF2141;
   }
