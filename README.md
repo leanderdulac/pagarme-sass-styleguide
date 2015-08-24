@@ -7,6 +7,7 @@ The awesome angular.js styleguide that we follow at Pagar.me
   1. [Selectors](#selectors)
   1. [Variables](#variables)
   1. [Constants](#constants)
+  1. [Nesting] (#nesting)
   1. [Mixings](#mixings)
 
 ## CSS Ruleset
@@ -19,7 +20,7 @@ The awesome angular.js styleguide that we follow at Pagar.me
 * One (1) new line after first `{`
 * One (1) new line after last property, last `}` should have its own line
 * Related selectors on the same line; unrelated selectors on new lines;
-* New line for selectors using `&`
+* New line for nested selectors.
 * `@include` statements always first
 
 ```scss
@@ -32,6 +33,10 @@ The awesome angular.js styleguide that we follow at Pagar.me
   
   &.green{
     background: green;
+  }
+  
+  .foo-bar-button{
+    border-radius: 4px;
   }
 }
 
@@ -85,6 +90,37 @@ As long as SASS does not have any support for contants, let's adopt a different 
 ```scss
 $DASHBOARD_ALLOWED_POSITIONS: (top, right, bottom, left);
 $DASHBOARD_GRAY_BLACK: #484848;
+```
+
+## Nesting
+
+Nesting is a powerful tool for organizing your code, but let's make some rules clear so it will not be misuded.
+
+* Always use `&` for referencing the current selector
+* Always nest pseudo-classes such as `::after` and `::before`
+* Always nest selector state such as `:hover`
+* Always nest selectors that dictate current selector variations, for instance `.is-active`
+* Never go deeper than 3 nesting levels, and [here is why](http://www.sitepoint.com/beware-selector-nesting-sass/)
+
+```scss
+//Awesome
+.foo-bar{
+  background: red;
+  
+  &:hover{
+    background: blue;
+  }
+  
+  &.active{
+    background: cadetblue;
+  }
+  
+  &::after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
 ```
 
 ## Mixings
