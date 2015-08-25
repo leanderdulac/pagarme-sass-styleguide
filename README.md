@@ -1,11 +1,15 @@
 # pagarme-sass-styleguide
 The awesome sass styleguide that we follow at Pagar.me
 
+> "Adding more people to a team should improve the team’s performance. A process must be in place that ensures that new developers are brought up to speed quickly and are duly allocated their specific areas of responsibility. Code must be carefully structured to ensure its maintainability over time and through team changes."
 
 ## Table of Contents
 
   1. Syntax and Formatting
     1. [Methodology](#methodology)
+      1. [Block](#block)
+      1. [Elements](#elements)
+      1. [Modifier](#modifier)
     1. [CSS Ruleset](#css-ruleset)
     1. [Selectors](#selectors)
     1. [Variables](#variables)
@@ -16,6 +20,15 @@ The awesome sass styleguide that we follow at Pagar.me
 
 ## Methodology
 
+This styleguide assumes [BEM methodology](https://en.bem.info/) to provide modular organization, clear and self-explanatory names for style components.
+
+### Block
+
+* The name should reference a block namespace
+
+### Elements
+
+### Modifier
 
 ## CSS Ruleset
 
