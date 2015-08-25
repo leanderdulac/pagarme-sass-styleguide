@@ -1,14 +1,21 @@
 # pagarme-sass-styleguide
 The awesome sass styleguide that we follow at Pagar.me
 
+
 ## Table of Contents
 
-  1. [CSS Ruleset](#css-ruleset)
-  1. [Selectors](#selectors)
-  1. [Variables](#variables)
-  1. [Constants](#constants)
-  1. [Nesting](#nesting)
-  1. [Mixings](#mixings)
+  1. Syntax and Formatting
+    1. [Methodology](#methodology)
+    1. [CSS Ruleset](#css-ruleset)
+    1. [Selectors](#selectors)
+    1. [Variables](#variables)
+    1. [Constants](#constants)
+    1. [Nesting](#nesting)
+    1. [Mixings](#mixings)
+  1. Structure
+
+## Methodology
+
 
 ## CSS Ruleset
 
