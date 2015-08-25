@@ -3,11 +3,11 @@ The awesome sass styleguide that we follow at Pagar.me
 
 ## Table of Contents
 
-  1. [CSS Ruleset](css-ruleset)
+  1. [CSS Ruleset](#css-ruleset)
   1. [Selectors](#selectors)
   1. [Variables](#variables)
   1. [Constants](#constants)
-  1. [Nesting] (#nesting)
+  1. [Nesting](#nesting)
   1. [Mixings](#mixings)
 
 ## CSS Ruleset
@@ -42,7 +42,7 @@ The awesome sass styleguide that we follow at Pagar.me
 
 .foo, .foo-bar,
 .circle {
-  @include aweomeness();
+  @include awesomeness();
   background: blue;
 }
 
@@ -50,8 +50,9 @@ The awesome sass styleguide that we follow at Pagar.me
 
 ## Selectors
 
+* **Avoid** tag name selectors so unwanted styles will not persist
+* Use classes for **everything**, ids should be restricted for javascript purposes only, such as testing or `getElementById()` method.
 * Should be written in [kebab-case](https://en.wikipedia.org/wiki/Kebab_case)
-* Use classes for everything, ids should be restricted for javascript purposes only, such as testing or `document.getElementById`
  
 ```scss
 //Awesome
@@ -65,7 +66,7 @@ The awesome sass styleguide that we follow at Pagar.me
 * Should be written in [kebab-case](https://en.wikipedia.org/wiki/Kebab_case)
 * Should have one space after `:` and no space between value and `;`
 * Should have meaningful names so confusion can be avoided
-* nested variables should have one `_` per nesting level so you have a clear idea about the scope of the variable
+* Nested variables should have one `_` per nesting level so you have a clear idea about the scope of the variable
  
 ```scss
 //Awesome
@@ -97,7 +98,7 @@ $DASHBOARD_GRAY_BLACK: #484848;
 Nesting is a powerful tool for organizing your code, but let's make some rules clear so it will not be misused.
 
 * Always use `&` for referencing the current selector
-* Always nest pseudo-classes such as `::after` and `::before`
+* Always nest pseudo-classes and pseudo-elements such as `::after` or `:first-child`
 * Always nest selector state such as `:hover`
 * Always nest selectors that dictate current selector variations, for instance `.is-active`
 * Never go deeper than 3 nesting levels, and [here is why](http://www.sitepoint.com/beware-selector-nesting-sass/)
