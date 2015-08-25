@@ -76,20 +76,24 @@ The full name of a modifier is created using the scheme:
 
 ```html
 <!-- Awesome HTML -->
-<form class="form form_login form_theme_forest">
-    <input class="form__input">
-    <input class="form__submit form__submit_disabled">
-</form>
+<div class="news-feed news-feed_friend news-feed_theme_greeny">
+    <div class="news-feed__card"></div>
+    <div class="news-feed__card news-feed__card_hidden"></div>
+</div>
 ```
 
 ```scss
 //Awesome SCSS
-.form {}
-.form_theme_forest {}
-.form_login {}
-.form__input {}
-.form__submit {}
-.form__submit_disabled {}
+.news-feed { //Block
+
+  &_friend {} //Boolean Block Modifier
+  
+  &_theme_greeny {} //Key-value Block Modifier
+  
+  &__card { //Element
+    &_hidden {} //Boolean Element Modifier
+  }
+}
 ```
 
 ## CSS Ruleset
