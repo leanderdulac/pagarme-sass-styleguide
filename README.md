@@ -1,5 +1,5 @@
 # pagarme-sass-styleguide
-The awesome angular.js styleguide that we follow at Pagar.me
+The awesome sass styleguide that we follow at Pagar.me
 
 ## Table of Contents
 
@@ -31,11 +31,11 @@ The awesome angular.js styleguide that we follow at Pagar.me
   height: 40px;
   overflow: hidden;
   
-  &.green{
+  &.green {
     background: green;
   }
   
-  .foo-bar-button{
+  .foo-bar-button {
     border-radius: 4px;
   }
 }
@@ -55,7 +55,7 @@ The awesome angular.js styleguide that we follow at Pagar.me
  
 ```scss
 //Awesome
-.nice-class-name{
+.nice-class-name {
   // (...)
 }
 ```
@@ -71,10 +71,10 @@ The awesome angular.js styleguide that we follow at Pagar.me
 //Awesome
 $root-dashboard-red: #FF3212;
 
-.first-level{
+.first-level {
   $_first-level-dashboard-red: #FF1208;
   
-  .second-level{
+  .second-level {
     $__second-level-dashboard-red: #FF2141;
   }
 }
@@ -104,18 +104,18 @@ Nesting is a powerful tool for organizing your code, but let's make some rules c
 
 ```scss
 //Awesome
-.foo-bar{
+.foo-bar {
   background: red;
   
-  &:hover{
+  &:hover {
     background: blue;
   }
   
-  &.active{
+  &.active {
     background: cadetblue;
   }
   
-  &::after{
+  &::after {
     content: '';
     display: table;
     clear: both;
@@ -135,7 +135,7 @@ Nesting is a powerful tool for organizing your code, but let's make some rules c
  
 ```scss
 //Awesome
-@mixing create-circle($size){
+@mixing create-circle($size) {
   width: $size;
   height: $size;
   border-radius: $size;
