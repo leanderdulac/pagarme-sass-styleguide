@@ -3,9 +3,9 @@ The awesome sass styleguide that we follow at Pagar.me
 
 > "Adding more people to a team should improve the team’s performance. A process must be in place that ensures that new developers are brought up to speed quickly and are duly allocated their specific areas of responsibility. Code must be carefully structured to ensure its maintainability over time and through team changes."
 
-## Table of Contents
+# Table of Contents
 
-  1. Syntax and Formatting
+  1. [Syntax and Formatting](#syntax-and-formatting)
     1. [Methodology](#methodology)
       1. [Block](#block)
       1. [Elements](#elements)
@@ -16,7 +16,9 @@ The awesome sass styleguide that we follow at Pagar.me
     1. [Constants](#constants)
     1. [Nesting](#nesting)
     1. [Mixings](#mixings)
-  1. Structure
+  1. [Structure](#structure)
+
+# Syntax and Formatting
 
 ## Methodology
 
@@ -228,3 +230,5 @@ Nesting is a powerful tool for organizing your code, but let's make some rules c
   border-radius: $size;
 }
 ```
+
+# Structure
