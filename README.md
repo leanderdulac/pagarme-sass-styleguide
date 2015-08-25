@@ -24,11 +24,73 @@ This styleguide assumes [BEM methodology](https://en.bem.info/) to provide modul
 
 ### Block
 
-* The name should reference a block namespace
+It's name follows the block-name scheme and defines a namespace for elements and modifiers.
+
+```html
+<!-- Awesome HTML -->
+<div class="news-feed"></div>
+```
+
+```scss
+//Awesome SASS
+.news-feed {
+  //That's a block!
+}
+```
 
 ### Elements
 
+The namespace defined by the name of a block identifies an element as belonging to the block. An element name is delimited by a double underscore `__`.
+
+**Avoid** using elements within elements. It is not recommended by the BEM methodology.
+
+```html
+<!-- Awesome HTML -->
+<div class="news-feed">
+  <div class="news-feed__card"></div>
+  <div class="news-feed__card"></div>
+  <div class="news-feed__card"></div>
+</div>
+```
+
+```scss
+//Awesome SASS
+.news-feed {
+
+  &__card {
+    //That's an element!
+  }
+}
+```
+
 ### Modifier
+
+The namespace defined by the name of a block identifies a modifier as belonging to that block or its element. A modifier name is delimited by a single underscore `_`.
+
+A modifier can belong to a **Block** or an **Element** and **must not** use it outside of the context of its owner.
+
+The full name of a modifier is created using the scheme:
+
+  * For Boolean modifiers — `.news-feed__card_mod-name`.
+  * For key-value type modifiers — `.news-feed__card_mod-name_mod-val`.
+
+```html
+<!-- Awesome HTML -->
+<form class="form form_login form_theme_forest">
+    <input class="form__input">
+    <input class="form__submit form__submit_disabled">
+</form>
+```
+
+```scss
+//Awesome SCSS
+.form {}
+.form_theme_forest {}
+.form_login {}
+.form__input {}
+.form__submit {}
+.form__submit_disabled {}
+```
 
 ## CSS Ruleset
 
