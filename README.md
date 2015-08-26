@@ -102,6 +102,47 @@ The full name of a modifier is created using the scheme:
 }
 ```
 
+## CSS Ruleset
+
+* Ideally, 80-characters wide lines
+* One (1) tab for indentation
+* One (1) space after `:`
+* No spaces between property value and `;`
+* One (1) space between selector and first `{`
+* One (1) new line after first `{`
+* One (1) css property per line
+* One (1) new line after last property, last `}` should have its own line
+* Related selectors on the same line; unrelated selectors on new lines;
+* New line for nested stuff.
+* `@include` statements always first
+
+```scss
+// Awesome
+.news-feed {
+  background: red;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  
+  &_green {
+    @include green-feed();
+    border-radius: 6px;
+  }
+  
+  &__button {
+    width: 125px;
+    height: 30px;
+  }
+}
+
+.news-feed, .sidebar-news-feed, //Those are related selectors
+.subscribe-button { //and .subscribe-button is not
+  background: blue;
+}
+
+```
+
+
 ## Strings
 
 Always use single quotes `'`.
@@ -188,45 +229,6 @@ $font-stack: Helvetica, Arial, sans-serif;
 $font-stack: (Helvetica, Arial, sans-serif,);
 ```
 
-## CSS Ruleset
-
-* Ideally, 80-characters wide lines
-* One (1) tab for indentation
-* One (1) space after `:`
-* No spaces between property value and `;`
-* One (1) space between selector and first `{`
-* One (1) new line after first `{`
-* One (1) css property per line
-* One (1) new line after last property, last `}` should have its own line
-* Related selectors on the same line; unrelated selectors on new lines;
-* New line for nested stuff.
-* `@include` statements always first
-
-```scss
-// Awesome
-.news-feed {
-  background: red;
-  width: 100%;
-  height: 40px;
-  overflow: hidden;
-  
-  &_green {
-    @include green-feed();
-    border-radius: 6px;
-  }
-  
-  &__button {
-    width: 125px;
-    height: 30px;
-  }
-}
-
-.news-feed, .sidebar-news-feed, //Those are related selectors
-.subscribe-button { //and .subscribe-button is not
-  background: blue;
-}
-
-```
 
 ## Selectors
 
