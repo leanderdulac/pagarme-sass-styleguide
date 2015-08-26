@@ -21,6 +21,11 @@ The awesome sass styleguide that we follow at Pagar.me
     1. [Nesting](#nesting)
     1. [Mixings](#mixings)
   1. [Structure](#structure)
+    1. [Base](#base)
+    1. [Layout](#layout)
+    1. [Modules and Components](#modules-and-components)
+    1. [Utilities](#utilities)
+    1. [Shame](#shame)
 
 # Syntax and Formatting
 
