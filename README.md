@@ -106,6 +106,7 @@ The full name of a modifier is created using the scheme:
 * No spaces between property value and `;`
 * One (1) space between selector and first `{`
 * One (1) new line after first `{`
+* One (1) css property per line
 * One (1) new line after last property, last `}` should have its own line
 * Related selectors on the same line; unrelated selectors on new lines;
 * New line for nested selectors.
@@ -119,11 +120,11 @@ The full name of a modifier is created using the scheme:
   height: 40px;
   overflow: hidden;
   
-  &.green {
+  &_green {
     background: green;
   }
   
-  .foo-bar-button {
+  &__button {
     border-radius: 4px;
   }
 }
@@ -186,10 +187,11 @@ $DASHBOARD_GRAY_BLACK: #484848;
 Nesting is a powerful tool for organizing your code, but let's make some rules clear so it will not be misused.
 
 * Always use `&` for referencing the current selector
-* Always nest pseudo-classes and pseudo-elements such as `::after` or `:first-child`
+* Always nest pseudo-elements and pseudo-classes such as `::after` or `:first-child`
 * Always nest selector state such as `:hover`
-* Always nest selectors that dictate current selector variations, for instance `.is-active`
-* Never go deeper than 3 nesting levels, and [here is why](http://www.sitepoint.com/beware-selector-nesting-sass/)
+* Always nest to follow BEM conventions using `&`
+* Nesting should follow this order: CSS properties, pseudo-classes, pseudo-elements, modifiers and for last elements
+* Never go deeper than 3 nesting levels and [here is why](http://www.sitepoint.com/beware-selector-nesting-sass/)
 
 ```scss
 //Awesome
@@ -200,7 +202,7 @@ Nesting is a powerful tool for organizing your code, but let's make some rules c
     background: blue;
   }
   
-  &.active {
+  &_active {
     background: cadetblue;
   }
   
