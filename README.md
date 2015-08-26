@@ -71,20 +71,20 @@ The namespace defined by the name of a block identifies an element as belonging 
 
 ### Modifier
 
-The namespace defined by the name of a block identifies a modifier as belonging to that block or its element. A modifier name is delimited by a single underscore `_`.
+The namespace defined by the name of a block identifies a modifier as belonging to that block or its element. A modifier name is delimited by two (2) hyphens `--`.
 
 A modifier can belong to a **Block** or an **Element** and **must not** use it outside of the context of its owner.
 
 The full name of a modifier is created using the scheme:
 
-  * For Boolean modifiers — `.news-feed__card_mod-name`.
-  * For key-value type modifiers — `.news-feed__card_mod-name_mod-val`.
+  * For Boolean modifiers — `.news-feed__card--mod-name`.
+  * For key-value type modifiers — `.news-feed__card--mod-name--mod-val`.
 
 ```html
 <!-- Awesome HTML -->
-<div class="news-feed news-feed_friend news-feed_theme_greeny">
+<div class="news-feed news-feed--friend news-feed--theme--greeny">
     <div class="news-feed__card"></div>
-    <div class="news-feed__card news-feed__card_hidden"></div>
+    <div class="news-feed__card news-feed__card--hidden"></div>
 </div>
 ```
 
@@ -94,10 +94,10 @@ The full name of a modifier is created using the scheme:
 
   &_friend {} //Boolean Block Modifier
   
-  &_theme_greeny {} //Key-value Block Modifier
+  &--theme--greeny {} //Key-value Block Modifier
   
   &__card { //Element
-    &_hidden {} //Boolean Element Modifier
+    &--hidden {} //Boolean Element Modifier
   }
 }
 ```
@@ -124,7 +124,7 @@ The full name of a modifier is created using the scheme:
   height: 40px;
   overflow: hidden;
   
-  &_green {
+  &--green {
     @include green-feed();
     border-radius: 6px;
   }
@@ -160,7 +160,7 @@ To avoid any potential issue with character encoding, use UTF-8 encoding in the 
 * When dealing with lengths, a 0 value should never ever have a unit.
 * Always do calculations wrapped by parenthesis `()`
 
-```
+```scss
 // Awesome
 $news-feed-base-height: 400px;
 .news-feed {
@@ -295,7 +295,7 @@ Nesting is a powerful tool for organizing your code, but let's make some rules c
     background: blue;
   }
   
-  &_active {
+  &--active {
     background: cadetblue;
   }
   
@@ -327,3 +327,4 @@ Nesting is a powerful tool for organizing your code, but let's make some rules c
 ```
 
 # Structure
+
