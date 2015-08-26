@@ -11,6 +11,10 @@ The awesome sass styleguide that we follow at Pagar.me
       1. [Elements](#elements)
       1. [Modifier](#modifier)
     1. [CSS Ruleset](#css-ruleset)
+    1. [Strings](#strings)
+    1. [Numbers](#numbers)
+    1. [Colors](#colors)
+    1. [Lists](#lists)
     1. [Selectors](#selectors)
     1. [Variables](#variables)
     1. [Constants](#constants)
@@ -98,6 +102,92 @@ The full name of a modifier is created using the scheme:
 }
 ```
 
+## Strings
+
+Always use single quotes `'`.
+
+To avoid any potential issue with character encoding, use UTF-8 encoding in the main stylesheet using the @charset directive. Make sure it is the very first element of the stylesheet and there is no character of any kind before it.
+
+```scss
+@charset 'utf-8';
+```
+
+## Numbers
+
+* Numbers should display leading zeros before a decimal value less than one.
+* **Never** display trailing zeros.
+* When dealing with lengths, a 0 value should never ever have a unit.
+* Always do calculations wrapped by parenthesis `()`
+
+```
+// Awesome
+$news-feed-base-height: 400px;
+.news-feed {
+  padding: 2em;
+  opacity: 0.5;
+  top: 0;
+  height: ($news-feed-base-height / 2);
+}
+
+// Nope, dude
+.news-feed {
+  padding: 2.0em;
+  opacity: .5;
+  top: 0px;
+  height: $news-feed-base-height / 2;
+}
+```
+
+## Colors
+
+* Always prefer named colors over its hex value
+* When using rgb, rgba or hsl color functions, use a space after each comma `,`
+
+```scss
+// Awesome
+.foo {
+  color: red;
+  background: rgba(23, 54, 212, 0.5);
+}
+
+// Nope, dude
+.foo {
+  color: #FF0000;
+  background: rgba(0,0,0,.5);
+}
+```
+
+## Lists
+
+Lists are the Sass equivalent of arrays. A list is a flat data structure (unlike maps) intended to store values of any type (including lists, leading to nested lists).
+
+* Either inlined or multilines
+* Necessarily on multilines if too long to fit on an 80-character line
+* Unless used as is for CSS purposes, always comma separated
+* Always wrapped in parenthesis
+* Trailing comma if multilines, not if inlined
+
+```scss
+// Awesome
+$font-stack: (Helvetica, Arial, sans-serif);
+
+// Awesome
+$font-stack: (
+  Helvetica,
+  Arial,
+  sans-serif,
+);
+
+// Nope, dude
+$font-stack: Helvetica Arial sans-serif;
+
+// Nope, dude
+$font-stack: Helvetica, Arial, sans-serif;
+
+// Nope, dude
+$font-stack: (Helvetica, Arial, sans-serif,);
+```
+
 ## CSS Ruleset
 
 * Ideally, 80-characters wide lines
@@ -109,29 +199,30 @@ The full name of a modifier is created using the scheme:
 * One (1) css property per line
 * One (1) new line after last property, last `}` should have its own line
 * Related selectors on the same line; unrelated selectors on new lines;
-* New line for nested selectors.
+* New line for nested stuff.
 * `@include` statements always first
 
 ```scss
 // Awesome
-.foo-bar {
+.news-feed {
   background: red;
   width: 100%;
   height: 40px;
   overflow: hidden;
   
   &_green {
-    background: green;
+    @include green-feed();
+    border-radius: 6px;
   }
   
   &__button {
-    border-radius: 4px;
+    width: 125px;
+    height: 30px;
   }
 }
 
-.foo, .foo-bar,
-.circle {
-  @include awesomeness();
+.news-feed, .sidebar-news-feed, //Those are related selectors
+.subscribe-button { //and .subscribe-button is not
   background: blue;
 }
 
