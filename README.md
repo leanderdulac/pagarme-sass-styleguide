@@ -319,7 +319,7 @@ Nesting is a powerful tool for organizing your code, but let's make some rules c
  
 ```scss
 //Awesome
-@mixing create-circle($size) {
+@mixing circle-shape($size) {
   width: $size;
   height: $size;
   border-radius: $size;
@@ -328,3 +328,79 @@ Nesting is a powerful tool for organizing your code, but let's make some rules c
 
 # Structure
 
+To maintain the sass code organized and modularized this styleguide follows most of SMACSS standards in order to show where and how each style code should be placed.
+
+## Folder structure
+
+```
+| base/
+| layout/
+| modules/
+|   components/
+| states/
+| utilities/
+| shame/
+```
+
+#### Base
+
+Lowest level style code, such as normalize.css and reset.css and it is the only place that tag names should be stylized for application general purposes.
+
+```
+base/
+  normalize.scss
+  reset.scss
+  base.scss
+```
+
+#### Layout
+
+Structural style code, the fundamental blocks of you application's layout that commonly will not change throughout different pages or sections.
+
+```
+layout/
+  grid-system.scss
+  dashboard.scss
+  header.scss
+  sidebar.scss
+  footer.scss
+```
+
+#### Modules and Components
+
+Application's pages and sections style code, modules should contain the section general style and components should hold elements styles
+
+```
+modules/
+  
+```
+
+#### States
+
+Components shared states style code should go here, something like that hidden class that you always use on several components.
+
+```
+states/
+  
+```
+
+#### Utilities
+
+Global Mixings and variables files should go here.
+
+```
+utilities/
+  mixings.scss
+  variables.scss
+```
+
+#### Shame
+
+Hacky style code stuff for individual "browsers" goes here. Shame on you, IE!
+
+```
+shame/
+  ie6.scss
+  ie7.scss
+  ie8.scss
+```
