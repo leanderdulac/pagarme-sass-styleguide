@@ -374,6 +374,8 @@ Modules are structures that should live by theirselves and not depend on any oth
 
 ```
 modules/
+  navigation.scss
+  form.scss
 ```
 
 #### Pages
