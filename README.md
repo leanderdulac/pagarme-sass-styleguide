@@ -333,16 +333,15 @@ Nesting is a powerful tool for organizing your code, but let's make some rules c
 
 # Structure
 
-To maintain the sass code organized and modularized this styleguide follows most of SMACSS standards in order to show where and how each style code should be placed.
+To maintain the sass code organized and modularized this styleguide structure section is inspired in Atomic Design and SMACSS standards 
 
 ## Folder structure
 
 ```
 | base/
-| layout/
+| components/
 | modules/
-|   components/
-| states/
+| pages/
 | utilities/
 | shame/
 ```
@@ -358,35 +357,34 @@ base/
   base.scss
 ```
 
-#### Layout
+#### Components
 
-Structural style code, the fundamental blocks of you application's layout that commonly will not change throughout different pages or sections.
+Components are the smallest pieces of your applications, such as inputs or buttons.
 
 ```
-layout/
-  grid-system.scss
-  dashboard.scss
-  header.scss
-  sidebar.scss
-  footer.scss
+components/
+  dropdown.scss
+  form-fields.scss
+  buttons.scss
 ```
 
-#### Modules and Components
+#### Modules
 
-Application's pages and sections style code, modules should contain the section general style and components should hold elements styles
+Modules are structures that should live by theirselves and not depend on any other style. It is the result of many components assigned together.
 
 ```
 modules/
-  
 ```
 
-#### States
+#### Pages
 
-Components shared states style code should go here, something like that hidden class that you always use on several components.
+One file per page of you application, that should only contain styles of how modules are going to be placed and work together. Only positioning and size styles are allowed in here.
 
 ```
-states/
-  
+pages/
+  home.scss
+  myaccount.scss
+  products.scss
 ```
 
 #### Utilities
