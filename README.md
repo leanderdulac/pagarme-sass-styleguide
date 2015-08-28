@@ -333,7 +333,9 @@ Nesting is a powerful tool for organizing your code, but let's make some rules c
 
 # Structure
 
-To maintain the sass code organized and modularized this styleguide structure section is inspired in Atomic Design and SMACSS standards 
+To maintain the sass code organized and modularized this styleguide structure section is inspired in Atomic Design and SMACSS standards. The goal here is to abstract code that is re-used accross the application into specific files to avoid repetition and exponential growth of you style code.
+
+Classes should be restricted to BEM conventions, so there should not be any class to dictate a particular style, a class should belong to a Block, Element or Modifier. Anything out of that scope should be extended and not placed within the HTML class attribute. The goal is to not make large classets and maintain class names semantic.
 
 ## Folder structure
 
@@ -348,18 +350,19 @@ To maintain the sass code organized and modularized this styleguide structure se
 
 #### Base
 
-Lowest level style code, such as normalize.css and reset.css and it is the only place that tag names should be stylized for application general purposes.
+Lowest level style code, such as normalize.css and reset.css and it is the only place that tag names should be stylized for application general purposes. Note that the layout folder was transformed into a layout file into this folder, so you can place all your layout classes here to extend them.
 
 ```
 base/
   normalize.scss
   reset.scss
   base.scss
+  layout.scss
 ```
 
 #### Components
 
-Components are the smallest pieces of your applications, such as inputs or buttons.
+Components are the smallest pieces of your applications, such as inputs or buttons and they should be used to form a module.
 
 ```
 components/
@@ -380,7 +383,7 @@ modules/
 
 #### Pages
 
-One file per page of you application, that should only contain styles of how modules are going to be placed and work together. Only positioning and size styles are allowed in here.
+One file per page of you application, that should only contain everything that is particular of that page, everything that is not used in 2 or more places yet, should be here. If the same code exists in 2 or more page files at the same time, you should create a module or a component file for it.
 
 ```
 pages/
