@@ -22,8 +22,9 @@ The awesome sass styleguide that we follow at Pagar.me
     1. [Mixings](#mixings)
   1. [Structure](#structure)
     1. [Base](#base)
-    1. [Layout](#layout)
-    1. [Modules and Components](#modules-and-components)
+    1. [Pages](#pages)
+    1. [Modules](#modules)
+    1. [Components](#components)
     1. [Utilities](#utilities)
     1. [Shame](#shame)
 
