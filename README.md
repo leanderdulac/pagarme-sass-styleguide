@@ -254,18 +254,14 @@ $font-stack: (Helvetica, Arial, sans-serif,);
 * Should be written in [kebab-case](https://en.wikipedia.org/wiki/Kebab_case)
 * Should have one space after `:` and no space between value and `;`
 * Should have meaningful names so confusion can be avoided
-* Nested variables should have one `_` per nesting level so you have a clear idea about the scope of the variable
+* Should not be nested and be avaiable for the whole file context, or global context.
  
 ```scss
 //Awesome
-$root-dashboard-red: #FF3212;
+$news-feed-red: #FF3212;
 
-.first-level {
-  $_first-level-dashboard-red: #FF1208;
-  
-  .second-level {
-    $__second-level-dashboard-red: #FF2141;
-  }
+.news-feed {
+  background-color: $news-feed-red;
 }
 ```
 
