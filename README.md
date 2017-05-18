@@ -279,32 +279,58 @@ $DASHBOARD_GRAY_BLACK: #484848;
 
 ## Nesting
 
-Nesting is a powerful tool for organizing your code, but let's make some rules clear so it will not be misused.
+Do not nest elements. Keep nesting to pseudo-classes and direct interactions with the parent element. Although nesting is a powerful feature provided by several preprocessors and plugins, it can easily get out of control and generate a terrible css ouput with high specificity or spoil the code legibility.
 
-* Always use `&` for referencing the current selector
-* Always nest pseudo-elements and pseudo-classes such as `::after` or `:first-child`
-* Always nest selector state such as `:hover`
-* Always nest to follow BEM conventions using `&`
-* Nesting should follow this order: CSS properties, pseudo-classes, pseudo-elements, modifiers and for last elements
-* Never go deeper than 3 nesting levels and [here is why](http://www.sitepoint.com/beware-selector-nesting-sass/)
-
-```scss
-//Awesome
-.foo-bar {
-  background: red;
+```sass
+/* wrong */
+.avatar {
+  font-size: 12px;
   
   &:hover {
-    background: blue;
+    font-size: 11px;
   }
   
-  &--active {
-    background: cadetblue;
+  &__link {
+    color: blue;
   }
+
+  &__photo {
+    height: 20px;
+  }
+}
+```
+
+```sass
+/* right */
+.avatar {
+  font-size: 12px;
   
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
+  &:hover {
+    font-size: 11px;
+  }
+}
+
+.avatar__link {
+  color: blue;
+}
+
+.avatar__photo {
+  height: 20px;
+}
+```
+
+Nesting can also be used to when an element is dependent of a parent's modifier. This helps to keep all code related to an element on the same block.
+
+```sass
+.avatar {
+  font-size: 12px;
+}
+
+.avatar__photo {
+  height: 20px;
+  
+  .avatar--big & {
+    height: 40px;
   }
 }
 ```
